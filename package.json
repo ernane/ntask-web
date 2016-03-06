@@ -1,0 +1,29 @@
+{
+  "name": "ntask-web",
+  "version": "1.0.0",
+  "description": "Versão web do gerenciador de tarefas",
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "server": "http-server public -p 3001",
+    "build": "npm run browserify && npm run uglify",
+    "browserify": "browserify src -t babelify -o public/js/app.js",
+    "uglify": "uglifyjs public/js/app.js -o public/js/app.min.js"
+  },
+  "author": "Ernane Sena",
+  "dependencies": {
+    "babelify": "^6.3.0",
+    "browser-request": "^0.3.3",
+    "browserify": "^11.2.0",
+    "grunt": "^0.4.5",
+    "http-server": "^0.8.4",
+    "tiny-emitter": "^1.0.0",
+    "uglify": "^0.1.5",
+    "uglify-js": "^2.6.2"
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^1.0.0",
+    "grunt-contrib-uglify": "^0.11.1",
+    "grunt-ng-annotate": "^1.0.1",
+    "load-grunt-tasks": "^3.4.0"
+  }
+}
